@@ -34,9 +34,9 @@ function perRequestContextFactory(options) {
 
   // Return the middleware
   return function perRequestContext(req, res, next) {
-    if (req.loopbackContext) {
+    /*if (req.loopbackContext) {
       return next();
-    }
+    }*/
 
     LoopBackContext.runInContext(function processRequestInContext(ns, domain) {
       req.loopbackContext = ns;
